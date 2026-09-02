@@ -1,0 +1,16 @@
+[project]
+name = "pscalc"
+version = "0.1.0"
+description = "变电站一次设计计算库：短路电流(IEC 60909)、辐射网潮流、无功补偿与设备校验"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+pscalc = "pscalc.cli.main:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pscalc*"]
