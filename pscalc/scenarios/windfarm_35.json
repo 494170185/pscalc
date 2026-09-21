@@ -1,0 +1,17 @@
+{
+  "name": "35kV 风电汇集站",
+  "description": "系统→35kV 架空线 12km→汇集母线→两回集电线路",
+  "base": {"s_mva": 100, "kv": 37},
+  "buses": [
+    {"name": "SYS", "kv": 37, "source": {"sk_mva": 800}},
+    {"name": "BUS35", "kv": 37},
+    {"name": "WT1", "kv": 37},
+    {"name": "WT2", "kv": 37}
+  ],
+  "branches": [
+    {"type": "line", "from": "SYS", "to": "BUS35", "r": 0.2, "x": 0.4, "km": 12},
+    {"type": "line", "from": "BUS35", "to": "WT1", "r": 0.2, "x": 0.4, "km": 5},
+    {"type": "line", "from": "BUS35", "to": "WT2", "r": 0.2, "x": 0.4, "km": 8}
+  ],
+  "loads": {"WT1": [8.0, 2.5], "WT2": [6.0, 2.0]}
+}

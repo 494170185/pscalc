@@ -1,0 +1,17 @@
+{
+  "name": "10kV 电缆配电网（三级链式）",
+  "description": "10kV 电源→三段电缆链，末端集中负荷",
+  "base": {"s_mva": 100, "kv": 10.5},
+  "buses": [
+    {"name": "SRC", "kv": 10.5, "source": {"ikss_ka": 16}},
+    {"name": "N1", "kv": 10.5},
+    {"name": "N2", "kv": 10.5},
+    {"name": "N3", "kv": 10.5}
+  ],
+  "branches": [
+    {"type": "line", "from": "SRC", "to": "N1", "r": 0.27, "x": 0.08, "km": 2},
+    {"type": "line", "from": "N1", "to": "N2", "r": 0.27, "x": 0.08, "km": 3},
+    {"type": "line", "from": "N2", "to": "N3", "r": 0.27, "x": 0.08, "km": 2}
+  ],
+  "loads": {"N2": [2.5, 0.8], "N3": [3.0, 1.0]}
+}

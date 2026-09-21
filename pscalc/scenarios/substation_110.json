@@ -1,0 +1,15 @@
+{
+  "name": "110kV 变电站两绕组主变典型接线",
+  "description": "系统→LGJ-240 30km→110kV 母线→50MVA 主变→10kV 母线",
+  "base": {"s_mva": 100, "kv": 115},
+  "buses": [
+    {"name": "G", "kv": 115, "source": {"sk_mva": 2000}},
+    {"name": "110bus", "kv": 115},
+    {"name": "10bus", "kv": 10.5}
+  ],
+  "branches": [
+    {"type": "line", "from": "G", "to": "110bus", "r": 0.132, "x": 0.4, "km": 30},
+    {"type": "transformer", "from": "110bus", "to": "10bus", "sn": 50, "uk": 10.5, "pk": 210}
+  ],
+  "loads": {"10bus": [30.0, 10.0]}
+}
