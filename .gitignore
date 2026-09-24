@@ -8,3 +8,4 @@ build/
 .coverage
 htmlcov/
 .venv/
+.github/workflows/
