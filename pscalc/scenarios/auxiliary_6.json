@@ -1,0 +1,19 @@
+{
+  "name": "6kV 厂用电系统（电动机群）",
+  "description": "厂用变→6kV 母线→四段馈线带电动机负荷",
+  "base": {"s_mva": 100, "kv": 6.3},
+  "buses": [
+    {"name": "AUX", "kv": 6, "source": {"ikss_ka": 20}},
+    {"name": "F1", "kv": 6},
+    {"name": "F2", "kv": 6},
+    {"name": "F3", "kv": 6},
+    {"name": "F4", "kv": 6}
+  ],
+  "branches": [
+    {"type": "line", "from": "AUX", "to": "F1", "r": 0.3, "x": 0.08, "km": 0.5},
+    {"type": "line", "from": "AUX", "to": "F2", "r": 0.3, "x": 0.08, "km": 0.8},
+    {"type": "line", "from": "AUX", "to": "F3", "r": 0.3, "x": 0.08, "km": 0.6},
+    {"type": "line", "from": "AUX", "to": "F4", "r": 0.3, "x": 0.08, "km": 1.2}
+  ],
+  "loads": {"F1": [1.8, 0.8], "F2": [2.2, 1.0], "F3": [1.5, 0.6], "F4": [2.8, 1.1]}
+}

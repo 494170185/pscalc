@@ -1,0 +1,17 @@
+{
+  "name": "10kV 双电源手拉手（开口运行）",
+  "description": "两路电源经联络开关开口——辐射网口径的联络备份",
+  "base": {"s_mva": 100, "kv": 10.5},
+  "buses": [
+    {"name": "S1", "kv": 10.5, "source": {"ikss_ka": 12}},
+    {"name": "B1", "kv": 10.5},
+    {"name": "B2", "kv": 10.5},
+    {"name": "S2", "kv": 10.5, "source": {"ikss_ka": 14}}
+  ],
+  "branches": [
+    {"type": "line", "from": "S1", "to": "B1", "r": 0.27, "x": 0.08, "km": 3},
+    {"type": "line", "from": "B1", "to": "B2", "r": 0.27, "x": 0.08, "km": 2},
+    {"type": "line", "from": "S2", "to": "B2", "r": 0.27, "x": 0.08, "km": 4}
+  ],
+  "loads": {"B1": [2.0, 0.6], "B2": [3.5, 1.2]}
+}

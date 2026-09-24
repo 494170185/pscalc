@@ -1,0 +1,13 @@
+{
+  "name": "35kV 用户变电站",
+  "description": "35kV 进线→10MVA 主变→0.4kV 低压母线带车间负荷",
+  "base": {"s_mva": 100, "kv": 37},
+  "buses": [
+    {"name": "IN35", "kv": 35, "source": {"sk_mva": 500}},
+    {"name": "LV04", "kv": 0.4}
+  ],
+  "branches": [
+    {"type": "transformer", "from": "IN35", "to": "LV04", "sn": 10, "uk": 6.5, "pk": 62}
+  ],
+  "loads": {"LV04": [7.0, 3.0]}
+}

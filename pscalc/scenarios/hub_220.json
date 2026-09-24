@@ -1,0 +1,17 @@
+{
+  "name": "220kV 枢纽变电站（双主变）",
+  "description": "系统→220kV 线路→两台 120MVA 主变并联→110kV 母线",
+  "base": {"s_mva": 100, "kv": 231},
+  "buses": [
+    {"name": "SYS", "kv": 230, "source": {"sk_mva": 5000}},
+    {"name": "BUS220", "kv": 230},
+    {"name": "T1LV", "kv": 115},
+    {"name": "T2LV", "kv": 115}
+  ],
+  "branches": [
+    {"type": "line", "from": "SYS", "to": "BUS220", "r": 0.08, "x": 0.4, "km": 40},
+    {"type": "transformer", "from": "BUS220", "to": "T1LV", "sn": 120, "uk": 14, "pk": 436},
+    {"type": "transformer", "from": "BUS220", "to": "T2LV", "sn": 120, "uk": 14, "pk": 436}
+  ],
+  "loads": {"T1LV": [60.0, 18.0], "T2LV": [50.0, 15.0]}
+}

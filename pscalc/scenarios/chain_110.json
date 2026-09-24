@@ -1,0 +1,17 @@
+{
+  "name": "110kV 链式输电网（三站串联）",
+  "description": "电源→A 站→B 站→C 站，各级带地区负荷",
+  "base": {"s_mva": 100, "kv": 115},
+  "buses": [
+    {"name": "PLANT", "kv": 110, "source": {"sk_mva": 3500}},
+    {"name": "STA", "kv": 110},
+    {"name": "STB", "kv": 110},
+    {"name": "STC", "kv": 110}
+  ],
+  "branches": [
+    {"type": "line", "from": "PLANT", "to": "STA", "r": 0.1, "x": 0.4, "km": 50},
+    {"type": "line", "from": "STA", "to": "STB", "r": 0.1, "x": 0.4, "km": 45},
+    {"type": "line", "from": "STB", "to": "STC", "r": 0.1, "x": 0.4, "km": 40}
+  ],
+  "loads": {"STA": [40.0, 12.0], "STB": [30.0, 10.0], "STC": [25.0, 8.0]}
+}

@@ -1,0 +1,17 @@
+{
+  "name": "光伏升压站 35kV（带长集电线）",
+  "description": "35kV 系统→汇流母线→两回长集电线路到光伏方阵",
+  "base": {"s_mva": 100, "kv": 37},
+  "buses": [
+    {"name": "GRID", "kv": 35, "source": {"sk_mva": 1500}},
+    {"name": "POCC", "kv": 35},
+    {"name": "PV1", "kv": 35},
+    {"name": "PV2", "kv": 35}
+  ],
+  "branches": [
+    {"type": "line", "from": "GRID", "to": "POCC", "r": 0.25, "x": 0.4, "km": 15},
+    {"type": "line", "from": "POCC", "to": "PV1", "r": 0.25, "x": 0.4, "km": 10},
+    {"type": "line", "from": "POCC", "to": "PV2", "r": 0.25, "x": 0.4, "km": 14}
+  ],
+  "loads": {"PV1": [12.0, 4.0], "PV2": [15.0, 5.0]}
+}
