@@ -1,0 +1,15 @@
+{
+  "name": "35kV 工业园区专线（带电容器补偿）",
+  "description": "系统→专线→园区降压变→10kV 配出",
+  "base": {"s_mva": 100, "kv": 37},
+  "buses": [
+    {"name": "GRID", "kv": 35, "source": {"sk_mva": 1200}},
+    {"name": "PARK", "kv": 35},
+    {"name": "PARK10", "kv": 10.5}
+  ],
+  "branches": [
+    {"type": "line", "from": "GRID", "to": "PARK", "r": 0.22, "x": 0.4, "km": 8},
+    {"type": "transformer", "from": "PARK", "to": "PARK10", "sn": 20, "uk": 8, "pk": 95}
+  ],
+  "loads": {"PARK10": [16.0, 7.5]}
+}

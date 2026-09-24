@@ -1,0 +1,19 @@
+{
+  "name": "110kV 终端变双回进线（分列运行）",
+  "description": "两回 110kV 进线分列运行、桥母线常开——典型终端变电所",
+  "base": {"s_mva": 100, "kv": 115},
+  "buses": [
+    {"name": "L1", "kv": 110, "source": {"sk_mva": 2500}},
+    {"name": "L2", "kv": 110, "source": {"sk_mva": 2500}},
+    {"name": "110I", "kv": 110},
+    {"name": "110II", "kv": 110},
+    {"name": "10M", "kv": 10.5}
+  ],
+  "branches": [
+    {"type": "line", "from": "L1", "to": "110I", "r": 0.1, "x": 0.4, "km": 25},
+    {"type": "line", "from": "L2", "to": "110II", "r": 0.1, "x": 0.4, "km": 30},
+    {"type": "transformer", "from": "110I", "to": "10M", "sn": 31.5, "uk": 10.5, "pk": 148},
+    {"type": "transformer", "from": "110II", "to": "10M", "sn": 31.5, "uk": 10.5, "pk": 148}
+  ],
+  "loads": {"10M": [24.0, 8.0]}
+}
